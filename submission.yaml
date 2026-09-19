@@ -1,0 +1,25 @@
+# Coldline - Task 3.7
+# File: submission.yaml
+# Component: Student answer sheet
+# Purpose: Record that this Task has no direct answer to record.
+# Interacts With: Submission schema and public verifier
+# Sprint/Task: Sprint 3 - Project 3 / Task 3.7
+# Concepts: Deterministic assessment, evidence as the record
+# Tools: YAML
+
+# Keep answers: {} in submission.yaml; the sample shows the same empty mapping.
+# Complete the work described in the Task contract.
+# Do not include secrets, personal data, or local absolute paths.
+
+# Task 3.7 — Instructor Presentation / Review
+# Assemble the evidence index from your six merged Task pull requests into
+# this Task's pull request DESCRIPTION, grouped into three named parts whose
+# time slices sum to 10 minutes; open a pull request that touches only this
+# file; run `poe verify`; then deliver the live Project Defense to your
+# instructor from the repositories, the check runs, and the runbook on screen.
+# Source: docs/student/task-3-7-contract.md.
+# The pull request record from Tasks 1 through 6 and your live defense of it
+# are the evidence for this Task, not a recorded claim. Keep this mapping
+# empty; this Task has no direct-answer fields to complete. submission.yaml is
+# the only file this Task permits you to change.
+answers: {}

@@ -1,0 +1,13 @@
+# Coldline - Task 3.7
+# File: submission-template.yaml
+# Component: Public verifier fixture
+# Purpose: Exercise the shipped answer sheet inside the public test suite.
+# Interacts With: tests/contract/test_submission.py
+# Sprint/Task: Sprint 3 - Project 3 / Task 3.7
+# Concepts: Deterministic assessment, evidence as the record
+# Tools: YAML
+
+# Task 3.7 — Instructor Presentation / Review
+# Source: docs/student/task-3-7-contract.md.
+# Keep this mapping empty; this Task has no direct-answer fields to complete.
+answers: {}
