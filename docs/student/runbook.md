@@ -19,11 +19,17 @@ pass for that scenario, written from one run against the live stack.
 
 - **Signal.** The main queue's `ApproximateNumberOfMessages` climbed from 0 to 5 while the worker
   was stopped, with `ApproximateNumberOfMessagesNotVisible` at 0 and the dead-letter queue at 0.
-  Growing depth with nothing in flight is the signature of an absent consumer.
-- **Where it showed.** The Grafana diagnostics dashboard's queue-depth panel and Prometheus's
-  `coldline_job_queue_stream_length` series both went *silent* rather than high: the worker reports that
-  gauge itself, so a stopped worker stops the series. The last reported value stays flat on the
-  dashboard while the real depth grows; the silence is the first thing to notice.
+  Growing depth with nothing in flight is the signature of an absent consumer. That reading came
+  from *outside* the worker — the same host-side `ApproximateNumberOfMessages` query on the queue
+  that `poe dev-failure-lab` prints as it runs — which is the only place it was available at all.
+- **Where it showed — and where it could not.** No Prometheus series showed this backlog, because
+  the only thing that publishes queue depth is the worker that was stopped.
+  `coldline_job_queue_stream_length` and `coldline_job_queue_dead_letter_depth` did not go high;
+  they stopped, leaving a scrape gap for the whole outage, and the Grafana diagnostics dashboard's
+  queue-depth panel held its last value flat while the real depth grew. The Prometheus-side signals
+  were therefore the absence itself: that scrape gap, and `up{job="coldline-worker"} == 0` for
+  exactly the length of the outage. Looking for a rising depth line here would have found nothing;
+  the silence is the first thing to notice.
 - **What did not fire.** `ColdlineDeadLetterQueueBacklog` stayed inactive in Alertmanager. It
   watches `coldline_job_queue_dead_letter_depth > 0`, and nothing was dead-lettered: SQS only
   redrives a message after `maxReceiveCount` *actual* receives, and a stopped consumer never
@@ -71,8 +77,9 @@ pass for that scenario, written from one run against the live stack.
   summary. Re-fetching them a second time returned identical records.
 - **Queue.** `ApproximateNumberOfMessages` and `ApproximateNumberOfMessagesNotVisible` on the
   main queue back to 0; dead-letter depth 0; zero messages redriven.
-- **Telemetry.** `coldline_job_queue_stream_length` resumed reporting and read 0; the alert stayed
-  inactive throughout, which is the correct outcome for this fault.
+- **Telemetry.** `up{job="coldline-worker"}` returned to 1 and the scrape gap closed:
+  `coldline_job_queue_stream_length` resumed reporting and read 0. The alert stayed inactive
+  throughout, which is the correct outcome for this fault.
 - **Evidence.** The lab's evidence blob, of this shape and with these values on the supplied
   stack:
 
