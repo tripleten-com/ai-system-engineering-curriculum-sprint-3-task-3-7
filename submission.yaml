@@ -22,4 +22,7 @@
 # are the evidence for this Task, not a recorded claim. Keep this mapping
 # empty; this Task has no direct-answer fields to complete. submission.yaml is
 # the only file this Task permits you to change.
+
+# Evidence index for Tasks 1-6 prepared on 2026-09-27 and placed in this
+# Task's pull request description; no answer value belongs in this file.
 answers: {}
