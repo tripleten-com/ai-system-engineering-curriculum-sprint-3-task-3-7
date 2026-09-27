@@ -139,8 +139,9 @@ local setup and repository orientation.
 2. [`docs/student/task-3-7-contract.md`](docs/student/task-3-7-contract.md) — what this Task
    assesses and who assesses it, what belongs in the pull request description, what the checks
    verify, and the one permitted path.
-3. [`docs/student/runbook.md`](docs/student/runbook.md) — the settled Task 6 recovery runbook,
-   supplied here; one of the sources you deliver the defense from.
+3. [`docs/student/runbook.md`](docs/student/runbook.md) — a completion/reference version of the
+   Task 6 recovery runbook, supplied here for orientation; not your evidence, use your own runbook
+   linked at Task 6's accepted commit at the defense.
 4. [`docs/fidelity/JobQueue.md`](docs/fidelity/JobQueue.md) — Task 3.3's record of what LocalStack
    SQS does not prove, with the settled ECS section Task 3.6 added; the limits you bring forward.
 
@@ -211,9 +212,10 @@ The only student-editable path is:
 - `submission.yaml`
 
 Task 3.6's `docs/student/runbook.md` and the ECS section of `docs/fidelity/JobQueue.md` are
-supplied and settled here; they are not yours to change in this Task, and neither is anything
-under `tests/student/`. Keep the worker, both adapters, the failure-lab and exercise scripts,
-Task 3.3's own settled `compose.yaml`, Task 3.4's own settled `infra/observability/alerts.yml`,
+supplied here as completion/reference versions of Task 6's files, settled and useful for
+orientation but not your evidence; they are not yours to change in this Task, and neither is
+anything under `tests/student/`. Keep the worker, both adapters, the failure-lab and exercise
+scripts, Task 3.3's own settled `compose.yaml`, Task 3.4's own settled `infra/observability/alerts.yml`,
 Task 3.5's own settled `.github/workflows/task.yml`, and every test file exactly as supplied; the
 public check compares the diff from your merge base against this one permitted file and reports
 any other change as a boundary violation. Everything else in this repository is supplied.
@@ -225,8 +227,9 @@ read `docs/student/task-3-7-contract.md`, open each of Tasks 1 through 6 on the 
 its repository, assemble the six entries and the three-part structure into this Task's pull
 request description, check `git diff --stat` shows only `submission.yaml`, run `poe verify`,
 open and merge your pull request, submit on the platform, rehearse the three parts against the
-clock, and deliver the defense with the repositories, the check runs, `docs/student/runbook.md`,
-and `docs/fidelity/JobQueue.md` on screen.
+clock, and deliver the defense with the repositories, the check runs, and your own
+`docs/student/runbook.md` and `docs/fidelity/JobQueue.md`, linked at Task 6's accepted commit, on
+screen.
 
 ## Operational limits
 
