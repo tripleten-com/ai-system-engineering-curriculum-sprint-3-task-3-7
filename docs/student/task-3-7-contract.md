@@ -32,8 +32,8 @@ by a human.
 | Task 3.3's own settled dead-letter redrive policy | `compose.yaml` | unchanged; not this Task's editable surface |
 | Task 3.4's own settled alert window | `infra/observability/alerts.yml` | unchanged; not this Task's editable surface |
 | Task 3.5's own settled reliability gate | `.github/workflows/task.yml` | unchanged; not this Task's editable surface |
-| Task 3.6's settled recovery runbook | `docs/student/runbook.md` | supplied here; one of the sources you deliver the defense from; not this Task's editable surface |
-| Task 3.6's settled ECS fidelity section | `docs/fidelity/JobQueue.md` | supplied here, below Task 3.3's own SQS record; bring its limits forward at the defense, do not rewrite them |
+| Task 3.6's settled recovery runbook | `docs/student/runbook.md` | a completion/reference version, supplied here for orientation; not your evidence, use your own linked at Task 6's accepted commit; not this Task's editable surface |
+| Task 3.6's settled ECS fidelity section | `docs/fidelity/JobQueue.md` | supplied here, below Task 3.3's own SQS record, for orientation; bring its limits forward from your own copy linked at Task 6's accepted commit, do not rewrite them |
 | Task 3.3's own exercise scripts and queue diagnostics | `tests/failure/force_dlq_arrival.py`, `tests/failure/redrive_and_verify.py`, `tests/failure/queue_client.py` | still runnable; not this Task's exercise; do not edit them |
 | Task 3.4's own exercise scripts | `tests/failure/trigger_alert_load.py`, `tests/failure/verify_alert_recovery.py` | still runnable; not this Task's exercise; do not edit them |
 | Task 3.6's development failure lab | `tests/failure/dev_failure_lab.py` | still runnable; not this Task's exercise; do not rerun it for fresher output |
@@ -57,8 +57,8 @@ the Instructor Review; no automated check in this repository reads it. It carrie
   output, a check-run page, a section of the runbook — never a slide) and what you say about it.
 - **The stated limits**, one or two lines under each part: what a single-host Compose rollout
   does not prove about a managed platform, and what LocalStack SQS does not prove about managed
-  SQS and ECS. Your release record and `docs/fidelity/JobQueue.md` already hold this; bring it
-  forward.
+  SQS and ECS. Your release record and your own `docs/fidelity/JobQueue.md`, linked at Task 6's
+  accepted commit, already hold this; bring it forward from there.
 
 Every excerpt is from your own run, dated and attributed to the command or check that produced
 it, and separated from supplied data. A Task with no link, or with a missing, skipped, or errored
@@ -105,9 +105,10 @@ reports the boundary violation rather than your work.
 After the public check passes and your instructor has read the assembled pull request, you
 deliver the Project Defense live, in at most 10 minutes, by part: state the decision, point at the
 diff or the output that proves it holds, and name the limit. Have the six pull request pages, the
-platform results for each Task, the two `reliability-gate` check runs from Task 5,
-`docs/student/runbook.md`, and `docs/fidelity/JobQueue.md` open before the session, and share that
-screen. When the local evidence cannot answer a question, say so and say what measurement would.
+platform results for each Task, the two `reliability-gate` check runs from Task 5, and your own
+`docs/student/runbook.md` and `docs/fidelity/JobQueue.md`, linked at Task 6's accepted commit, open
+before the session, and share that screen. When the local evidence cannot answer a question, say
+so and say what measurement would.
 Sprint 3 - Project 3 is complete once all seven Task pull requests are merged, submitted, and
 passed their required checks, both Instructor Reviews are recorded, and the outcome of the Project
 Defense is recorded.
