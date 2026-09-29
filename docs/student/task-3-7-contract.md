@@ -1,4 +1,4 @@
-# Task 3.7 — Instructor Presentation / Review contract
+# Task 3.7 — Project Defense contract
 
 Six merged pull requests already prove that the platform passed. This Task asks whether you can
 say why it is built the way it is. You write no new code, no essay, and no slides. You assemble
