@@ -1,4 +1,4 @@
-# Coldline Task 3.7 — Instructor Presentation / Review
+# Coldline Task 3.7 — Project Defense
 
 This checkpoint is the complete, settled Coldline platform. Everything Tasks 1 through 6 assessed
 now ships supplied and correct: the release manifest and health gate from Task 3.1, the bounded
