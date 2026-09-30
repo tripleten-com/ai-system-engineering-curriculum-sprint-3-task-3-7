@@ -1,6 +1,16 @@
 <!--
 Coldline - Task 3.7
-Supplied checkpoint: the settled Task 6 recovery runbook, carried into the Task 3.7
+Known-wrong variant "edited-supplied-runbook". Identical to the supplied, settled
+docs/student/runbook.md except for one extra sentence appended under `## Verification`,
+claiming a fresher rerun of the failure lab. The runbook is still structurally complete:
+all four required headings, once each, in order, each with content, and no Markdown link
+is introduced, so tests/contract/test_runbook_contract.py and every other check still pass.
+Its ONLY defect is that it is a change to a file Task 3.7 does not permit the student to
+change, so it must fail exactly one check, tests/contract/test_authoring_contract.py::
+test_submission_change_stays_within_the_permitted_diff, and nothing else. A README is
+deliberately not placed in this directory: qualify_sprint_3.py overlays every file of a
+variant onto the materialized Task root, and a README.md here would clobber the Task's own.
+Original supplied note: the settled Task 6 recovery runbook, carried into the Task 3.7
 checkpoint exactly as Task 3.6 accepted it. It is not student-editable in this Task; the
 only file a Task 3.7 pull request may change is submission.yaml. It is one of the sources
 the Project Defense is delivered from, alongside the six merged pull requests and
@@ -103,3 +113,5 @@ pass for that scenario, written from one run against the live stack.
 - **Exit.** `poe dev-failure-lab` exited 0. The incident is over when the records are terminal,
   both depths are zero, and the depth gauge is reporting again — not when the worker container
   merely shows `running`.
+- **Rerun.** I reran `poe dev-failure-lab` while preparing the defense and it recovered again in
+  7.6 seconds, so the figures above are fresh.
